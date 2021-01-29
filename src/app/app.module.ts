@@ -3,23 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { UserService } from './services/user.service';
-import { ZipCodeService } from './services/zipcode.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module'
+import { UserRegisterModule } from './user-register/user-register.module';
+import { UserListModule } from './user-list/user-list.module'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    AppRoutingModule,
+    UserRegisterModule,
+    UserListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

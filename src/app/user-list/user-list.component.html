@@ -1,0 +1,33 @@
+<div class="body">
+<header>
+    <h1>Crud de usuários</h1>
+    <button routerLink = "new">Novo usuário</button>
+</header>
+
+<main>
+<article class="user-item" *ngFor="let user of users">
+
+    <header>
+        <div>
+            <strong>{{user.name}}</strong>
+            <span>{{user.email}}</span>
+        </div>
+    </header>
+
+    <p>
+    CPF - {{user.cpf}}
+        <br /><br />
+     TELEFONE - {{user.phone}}
+    </p>
+
+    <footer>
+        <button (click)="goToRegister(user.id)">
+            Editar
+        </button>
+        <button>
+            Deletar
+        </button>
+    </footer>
+</article>
+</main>
+</div>

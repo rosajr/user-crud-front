@@ -3,10 +3,18 @@ import { HttpClient } from '@angular/common/http'
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    private readonly URL = 'http://localhost:8080/users' 
+    private readonly URL = 'http://localhost:8080/users'
     constructor(private http: HttpClient) { }
 
     save(user: object) {
         return this.http.post(`${this.URL}`, user)
+    }
+
+    list() {
+        return this.http.get(`${this.URL}`)
+    }
+
+    getById(id:number) {
+        return this.http.get(`${this.URL}/${id}`)
     }
 }

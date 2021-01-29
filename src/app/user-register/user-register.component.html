@@ -1,0 +1,67 @@
+<main>
+    <form [formGroup]="formControl" class="form" >
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" id="name" formControlName="name" class="form-control" autofocus />
+        <span *ngIf="formControl.get('name').hasError('required')">Campo Obrigatório</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" class="form-control" required />
+        <span *ngIf="formControl.get('email').hasError('required')">Campo Obrigatório</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="phone">Telefone</label>
+        <input type="phone" id="phone" formControlName="phone" class="form-control" required />
+        <span *ngIf="formControl.get('phone').hasError('required')">Campo Obrigatório</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input id="password" type="password" formControlName="password" class="form-control" required />
+        <span *ngIf="formControl.get('password').hasError('required')">Campo Obrigatório</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input id="cpf" type="text" formControlName="cpf" class="form-control" required />
+        <span *ngIf="formControl.get('cpf').hasError('required')">Campo Obrigatório</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="cep">CEP</label>
+        <input id="cep" type="text" formControlName="zipCode" class="form-control" required (blur)="getCep()"/>
+        <span *ngIf="formControl.get('zipCode').hasError('required')">Campo Obrigatório</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="street">Rua</label>
+        <input id="street" type="text" formControlName="street" class="form-control" disabled required />
+      </div>
+  
+      <div class="form-group">
+        <label for="number">Número</label>
+        <input id="number" type="text" formControlName="number" class="form-control" required />
+        <span *ngIf="formControl.get('number').hasError('required')">Campo Obrigatório</span>
+      </div>
+  
+      <div class="form-group">
+        <label for="complement">Complemento</label>
+        <input id="complement" type="text" formControlName="complement" class="form-control" required />
+      </div>
+  
+      <div class="form-group">
+        <label for="neighborhood">Bairro</label>
+        <input id="neighborhood" type="text" formControlName="neighborhood" class="form-control" disabled required />
+      </div>
+  
+      <div class="form-group">
+        <label for="city">Cidade</label>
+        <input id="city" type="text" formControlName="city" class="form-control" disabled required />
+      </div>
+  
+      <button class="btn btn-primary" type="submit" (click)="save()">Salvar</button>
+    </form>
+  </main>
